@@ -7,10 +7,12 @@ public class Persistencia {
     // almacena en txt el tiempo promedio de cada día
     String ruta = "/home/mario/archivo.txt";
     File archivo = new File(ruta);
-    BufferedWriter bw; {}
+    BufferedWriter bw;
     if(archivo.exists()) {
-      // El fichero ya existe
+        bw = new BufferedWriter(new FileWriter(archivo));
+        bw.write("El fichero de texto ya estaba creado.");
     } else {
-      // El fichero no existe y hay que crearlo
+        bw = new BufferedWriter(new FileWriter(archivo));
+        bw.write("Acabo de crear el fichero de texto.");
     }
 }
