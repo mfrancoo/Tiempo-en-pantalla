@@ -40,4 +40,7 @@ public class Procesamiento extends TimerTask {
             e.printStackTrace();
         }
     }
+    public void calcularPromedio(ArrayList<Integer> L){
+    
+    }
 }
