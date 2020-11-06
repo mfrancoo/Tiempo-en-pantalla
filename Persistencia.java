@@ -1,6 +1,6 @@
 import java.io.File;
 import java.io.IOException;
-import java.io.BufferedWriter;
+// import java.io.BufferedWriter;
 import java.io.FileWriter;
 
 public class Persistencia {
