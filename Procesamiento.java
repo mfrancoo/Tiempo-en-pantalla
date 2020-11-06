@@ -1,10 +1,11 @@
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
 public class Procesamiento extends TimerTask {
     private double tDiario;
     private double tSemanal;
-    
+
     @Override
     public void run() {
         System.out.println("Timer task started at:"+new Date());
