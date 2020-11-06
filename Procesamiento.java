@@ -4,6 +4,7 @@ import java.util.TimerTask;
 public class Procesamiento extends TimerTask {
     private double tDiario;
     private double tSemanal;
+    
     @Override
     public void run() {
         System.out.println("Timer task started at:"+new Date());
@@ -40,7 +41,7 @@ public class Procesamiento extends TimerTask {
             e.printStackTrace();
         }
     }
-    
+
     public void calcularPromedio(ArrayList<Integer> L){
     
     }
