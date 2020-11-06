@@ -8,15 +8,15 @@ public class Procesamiento extends TimerTask {
 
     @Override
     public void run() {
-        System.out.println("Timer task started at:"+new Date());
+        System.out.println("Temporizador inicio el :"+new Date());
         completeTask();
-        System.out.println("Timer task finished at:"+new Date());
+        System.out.println("Temporizador terminó el:"+new Date());
     }
 
-    private void completeTask() {
+    private void completeTask() { 
         try {
-            //assuming it takes 20 secs to complete the task
-            Thread.sleep(20000);
+            //dura 30 min
+            Thread.sleep(60000*30);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
