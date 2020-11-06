@@ -10,4 +10,10 @@ public class Usuario{
         public String getNombre(){
             return this.nombre;
         }
+        public String getOcupacion(){
+            return this.ocupacion;
+        }
+        public int getMetaUso(){
+            return this.metaUso;
+        }
 }
