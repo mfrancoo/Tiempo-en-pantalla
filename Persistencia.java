@@ -6,7 +6,7 @@ import java.io.IOException;
 public class Persistencia {
 
     public static void main(String[] args) throws IOException {
-        String ruta = "/home/mario/archivo.txt";
+        String ruta = "D:/Laura/Local/Software/_Universidad/PDS (2020-2)/Tiempo-en-pantalla/Tiempo-en-pantalla/tiempoPromedioDias.txt";
         File archivo = new File(ruta);
         BufferedWriter bw;
         if(archivo.exists()) {
