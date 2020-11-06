@@ -2,8 +2,6 @@ import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
 public class Procesamiento extends TimerTask {
-    private double tInicio;
-    private double tFin;
     private double tDiario;
     private double tSemanal;
     @Override
@@ -22,7 +20,7 @@ public class Procesamiento extends TimerTask {
         }
     }
     
-    public static void main(String args[]){
+    public static void correrTimer() {
         TimerTask timerTask = new Procesamiento();
         //running timer task as daemon thread
         Timer timer = new Timer(true);
