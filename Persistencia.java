@@ -1,22 +1,33 @@
-import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
+// import java.io.BufferedWriter;
+import java.io.FileWriter;
 
 public class Persistencia {
 
-    public static void main(String[] args) throws IOException {
-        String ruta = "D:/Laura/Local/Software/_Universidad/PDS (2020-2)/Tiempo-en-pantalla/Tiempo-en-pantalla/tiempoPromedioDias.txt";
-        File archivo = new File(ruta);
-        BufferedWriter bw;
-        if(archivo.exists()) {
-            bw = new BufferedWriter(new FileWriter(archivo));
-            bw.write("El fichero de texto ya estaba creado.");
-        } else {
-            bw = new BufferedWriter(new FileWriter(archivo));
-            bw.write("Acabo de crear el fichero de texto.");
+    public static void crearFichero() {
+        try {
+            File myObj = new File("HistoricoUsoDiario.txt");
+            if (myObj.createNewFile()) {
+                System.out.println("File created: " + myObj.getName());
+            } else {
+                System.out.println("File already exists.");
+            }
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
         }
-        bw.close();
     }
-    
+
+    public static void escribirAFichero() {
+        try {
+            FileWriter myWriter = new FileWriter("HistoricoUsoDiario.txt");
+            myWriter.write("Files in Java might be tricky, but it is fun enough!");
+            myWriter.close();
+            System.out.println("Successfully wrote to the file.");
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+    }
 }

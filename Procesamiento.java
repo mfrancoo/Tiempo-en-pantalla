@@ -1,28 +1,28 @@
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
 public class Procesamiento extends TimerTask {
-    private double tInicio;
-    private double tFin;
     private double tDiario;
     private double tSemanal;
+
     @Override
     public void run() {
-        System.out.println("Timer task started at:"+new Date());
+        System.out.println("Temporizador inicio el :"+new Date());
         completeTask();
-        System.out.println("Timer task finished at:"+new Date());
+        System.out.println("Temporizador terminó el:"+new Date());
     }
 
-    private void completeTask() {
+    private void completeTask() { 
         try {
-            //assuming it takes 20 secs to complete the task
-            Thread.sleep(20000);
+            //dura 30 min
+            Thread.sleep(60000*30);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
     
-    public static void main(String args[]){
+    public static void correrTimer() {
         TimerTask timerTask = new Procesamiento();
         //running timer task as daemon thread
         Timer timer = new Timer(true);
@@ -41,5 +41,9 @@ public class Procesamiento extends TimerTask {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+    public void calcularPromedio(ArrayList<Integer> L){
+    
     }
 }
