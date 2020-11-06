@@ -6,7 +6,6 @@ public class Usuario{
             this.nombre = n;
             this.ocupacion = o;
             this.metaUso = m;
-            System.out.println("Sus datos se han almacenado correctamente");
         }
         public String getNombre(){
             return this.nombre;

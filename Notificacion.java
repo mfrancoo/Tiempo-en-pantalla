@@ -4,7 +4,7 @@ public class Notificacion{
     public String mostrarPausa(){
         if(){
         
-        }else if{
+        }else if(){
         
         }
     }
