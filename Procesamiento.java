@@ -49,6 +49,7 @@ public class Procesamiento extends Usuario {
         return "";
     }
 
+    @Override
     public String enviarAPersistencia() {
         String sesionesTexto = "";
         String promediosDiariosTexto = "";

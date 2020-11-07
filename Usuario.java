@@ -3,6 +3,7 @@ public class Usuario {
     private String nombre;
     private String ocupacion;
     private int metaUso;
+    public static int metaUsoCopia;
 
     public Usuario() {
     }
@@ -11,6 +12,7 @@ public class Usuario {
         this.nombre = nombre;
         this.ocupacion = ocupacion;
         this.metaUso = metaUso;
+        metaUsoCopia = metaUso;
     }
 
     public String getNombre() {
