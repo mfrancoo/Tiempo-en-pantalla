@@ -24,8 +24,25 @@ public class Menu extends Procesamiento{
         scan.close();
     }
 
-    public void generarBarras() {
+    public void generarBarras(String tipo) {
+        if (tipo == "diario") {
+            System.out.println("Uso diario");
+            for (int i = 8; i > 0; i--) {
+                System.out.println("  "+i+"  ");
+                for (int j = 8; j > 0; j--) {
+                    if (Procesamiento.promediosDiarios.get(promediosDiarios.size()-1) >= i) {
+                        System.out.print("|////|");
+                    } else {
+                        System.out.print("|    |");
+                    }
+                }
+            }
+            System.out.println("  h   Uso");
 
+        } else if (tipo == "semanal") {
+
+        } else if (tipo == "mensual") {
+        }
     }
 }
 

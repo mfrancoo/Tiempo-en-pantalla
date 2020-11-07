@@ -2,12 +2,12 @@ import java.util.*;
 import java.time.*;
 import java.time.temporal.ChronoUnit;
 
-public class Procesamiento extends Usuario {
+public class Procesamiento {
 
-    private static LocalDateTime tInicio;
-    private static LocalDateTime tFin;
-    private static long tDiario;
-    private static long tSemanal;
+    public static LocalDateTime tInicio;
+    public static LocalDateTime tFin;
+    public static long tDiario;
+    public static long tSemanal;
     public static ArrayList<LocalDateTime> sesiones = new ArrayList<>();
     public static ArrayList<Long> promediosDiarios = new ArrayList<>(); //minutos
 
