@@ -1,5 +1,6 @@
 import java.util.*;
 import java.time.*;
+import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 
 public class Procesamiento extends Usuario {
@@ -43,13 +44,21 @@ public class Procesamiento extends Usuario {
         // calcular suma de tDiarios por semana
     }
 
-    public static String enviarAServidor() {
+    public String enviarAServidor() {
         // enviar datos del usuario, lista sesiones y lista promediosDiarios
         return "";
     }
 
-    public static String enviarAPersistencia() {
-        // enviar datos del usuario, lista sesiones y lista promediosDiarios
-        return "";
+    public String enviarAPersistencia() {
+        String sesionesTexto = "";
+        String promediosDiariosTexto = "";
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        for (LocalDateTime sesion : sesiones) {
+            sesionesTexto += sesion.format(formatter) + "\n";
+        }
+        for (Long promedio : promediosDiarios) {
+            promediosDiariosTexto += promedio + "\n";
+        }
+        return this.toString()+"\n"+"-SESIONES-\n"+sesionesTexto+"-PROMEDIOS DIARIOS-\n"+promediosDiariosTexto;
     }
 }
