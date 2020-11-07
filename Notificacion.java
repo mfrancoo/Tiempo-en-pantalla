@@ -4,23 +4,14 @@ import java.time.temporal.ChronoUnit;
 public class Notificacion extends Usuario{
     
     private String tipoPausa1 = this.getNombre()+", llevas media hora en pantalla, es momento de pararse, estirar y darse un respiro";
-    private String tipoPausa2 = this.getNombre()+", llevas una hora en pantalla, es momento de pararse, estirar y darse un respiro" ;
-
-    public void mostrarPausa(){
-        if(){
-        
-        }else if(){
-        
-        }
-    }
-
-    public void experimento() {
-        LocalDateTime tpausa = Procesamiento.tInicio.plus(30, ChronoUnit.MINUTES);
+    
+    public void mostrarPausa() {
+    for(int i=0; i<(Usuario.getMetaUso()*60); i+=30){
+                LocalDateTime tpausa = Procesamiento.tInicio.plus(i, ChronoUnit.MINUTES);
         if (Procesamiento.tInicio.isEqual(tpausa)) {
-            
-        }    
+            System.out.println(tipoPausa1);
+        }  
     }
-    //public String mostrarPausa(){}
-
+    }
 }
 
