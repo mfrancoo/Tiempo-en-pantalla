@@ -33,7 +33,7 @@ public class Menu extends Procesamiento {
   }
 
   public static void generarBarras(String tipo) {
-    if (tipo == "diario") {
+    if (tipo.equals("diario")) {
       System.out.println("Uso diario");
       for (int i = 8; i > 0; i--) {
         System.out.println("  " + i + "  ");
@@ -44,9 +44,9 @@ public class Menu extends Procesamiento {
         }
       }
       System.out.println("  h   Uso");
-    } else if (tipo == "semanal") {
+    } else if (tipo.equals("semanal")) {
       //
-    } else if (tipo == "mensual") {
+    } else if (tipo.equals("mensual")) {
       //
     }
   }
