@@ -4,7 +4,7 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 
 public class Persistencia {
-
+    
     public static void crearFichero() {
         try {
             File myObj = new File("HistoricoUsoDiario.txt");

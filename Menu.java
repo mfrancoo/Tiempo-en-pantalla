@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 public class Menu extends Procesamiento {
   public void mostrarMenu() {
     Scanner scan = new Scanner(System.in);
