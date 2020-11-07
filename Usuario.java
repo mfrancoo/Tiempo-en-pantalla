@@ -4,7 +4,9 @@ public class Usuario {
     private String ocupacion;
     private int metaUso;
 
-    public Usuario() {}
+    public Usuario() {
+    }
+
     public Usuario(String nombre, String ocupacion, int metaUso) {
         this.nombre = nombre;
         this.ocupacion = ocupacion;
