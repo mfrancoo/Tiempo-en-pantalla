@@ -16,7 +16,7 @@ public class Menu extends Procesamiento {
     Procesamiento.iniciarTiempo();
     System.out.println("--- Presione x para detener el temporizador y ver sus graficas de uso ---");
 
-    //Notificacion.mostrarPausa();
+    Notificacion.mostrarPausa();
 
     String finalizar = scan.next().toLowerCase().trim();
     if (finalizar == "x") {
