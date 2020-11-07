@@ -16,17 +16,19 @@ public class Menu extends Procesamiento {
     Procesamiento.iniciarTiempo();
     System.out.println("--- Presione x para detener el temporizador y ver sus graficas de uso ---");
 
-    Notificacion.mostrarPausa();
-
-    String finalizar = scan.next().toLowerCase().trim();
-    if (finalizar == "x") {
-      Procesamiento.finalizarTiempo();
-      Procesamiento.calcularPromedioDiario();
-      usuario.mostrarMetaUso();
-      generarBarras("diario");
-
-      Persistencia.crearFichero();
-      Persistencia.escribirAFichero(usuario.enviarAPersistencia());
+    String finalizar = scan.next();
+    
+      while (true) {
+        Notificacion.mostrarPausa();
+        if (finalizar.toLowerCase().trim() != "x") {
+          Procesamiento.finalizarTiempo();
+          Procesamiento.calcularPromedioDiario();
+          usuario.mostrarMetaUso();
+          generarBarras("diario");
+          Persistencia.crearFichero();
+          Persistencia.escribirAFichero(usuario.enviarAPersistencia());
+          break;
+      }
     }
 
     scan.close();

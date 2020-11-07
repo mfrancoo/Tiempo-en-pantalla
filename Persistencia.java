@@ -8,9 +8,9 @@ public class Persistencia {
         try {
             File archivo = new File("RegistrosUsoDiario.txt");
             if (archivo.createNewFile()) {
-                System.out.println("Archivo creado: " + archivo.getName());
+                //System.out.println("Archivo creado: " + archivo.getName());
             } else {
-                System.out.println("El archivo ya existe.");
+                //System.out.println("El archivo ya existe.");
             }
         } catch (IOException e) {
             System.out.println("Ha ocurrido un error.");
