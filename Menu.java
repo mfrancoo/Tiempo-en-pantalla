@@ -1,6 +1,8 @@
 import java.util.Scanner;
 public class Menu extends Procesamiento {
-  public void mostrarMenu() {
+
+  public static  void mostrarMenu() {
+
     Scanner scan = new Scanner(System.in);
     System.out.println("Bienvenido, por favor ingrese los datos solicitados");
     System.out.println("Nombre:");
@@ -14,18 +16,23 @@ public class Menu extends Procesamiento {
     Procesamiento.iniciarTiempo();
     System.out.println("--- Presione x para detener el temporizador y ver sus graficas de uso ---");
 
+    //Notificacion.mostrarPausa();
+
     String finalizar = scan.next().toLowerCase().trim();
     if (finalizar == "x") {
       Procesamiento.finalizarTiempo();
       Procesamiento.calcularPromedioDiario();
       usuario.mostrarMetaUso();
       generarBarras("diario");
+
+      Persistencia.crearFichero();
+      Persistencia.escribirAFichero(usuario.enviarAPersistencia());
     }
 
     scan.close();
   }
 
-  public void generarBarras(String tipo) {
+  public static void generarBarras(String tipo) {
     if (tipo == "diario") {
       System.out.println("Uso diario");
       for (int i = 8; i > 0; i--) {
