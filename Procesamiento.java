@@ -4,23 +4,39 @@ import java.time.temporal.ChronoUnit;
 
 public class Procesamiento {
 
-    private double tDiario;
-    private double tSemanal;
     private static LocalDateTime tInicio;
     private static LocalDateTime tFin;
+    private static long tDiario;
+    private static long tSemanal;
+    public static ArrayList<LocalDateTime> sesiones = new ArrayList<>();
+    public static ArrayList<Long> promediosDiarios = new ArrayList<>();
 
-    public static void iniciarTiempo() { // tiempo de inicio
+    public static void iniciarTiempo() { // hora y fecha de inicio
         tInicio = LocalDateTime.now();
-        System.out.println(tInicio.getHour()+":"+tInicio.getMinute());
+        sesiones.add(tInicio);
+        System.out.println(tInicio.getHour() + ":" + tInicio.getMinute());
+        System.out.println(
+                "\nComienza la cuenta de tu tiempo en pantalla.\nTe recordaremos cuando sea hora de una pausa.");
     }
 
-    public static void finalizarTiempo() { // tiempo de fin 
+    public static void finalizarTiempo() { // hora y fecha de fin
         tFin = LocalDateTime.now();
-        System.out.println(tFin.getHour()+":"+tFin.getMinute());
+        System.out.println(tFin.getHour() + ":" + tFin.getMinute());
     }
 
-    public static void calcularTiempoUso() {
-        long duracion = tInicio.until(tFin, ChronoUnit.MINUTES);
-        System.out.println("Su sesión duro " + duracion + " minutos");
+    public static void calcularPromedioDiario() {
+        long tMinutos = tInicio.until(tFin, ChronoUnit.MINUTES);
+        double tHoras = tMinutos / 60;
+        System.out.println("\nSu sesión duró " + tHoras + " horas (" + tMinutos + " minutos\n)");
+        // verificamos si es o no la primera sesión del día
+        /*
+         * if (tInicio.getDayOfMonth() ==
+         * sesiones.get(sesiones.size()-2).getDayOfMonth() &&
+         * sesiones.get(sesiones.size()-2)!=null) { tDiario += tMinutos; } else {
+         * tDiario = tMinutos; promediosDiarios.add(tDiario); }
+         */
+    }
+
+    public static void calcularPromedioSemanal() {
     }
 }
