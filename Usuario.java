@@ -33,4 +33,8 @@ public class Usuario {
     public String toString() {
         return "- "+this.nombre+" -\n"+this.ocupacion+"\nMeta de uso diario: "+this.metaUso;
     }
+
+    public String enviarAPersistencia() {
+        return "";
+    }
 }
