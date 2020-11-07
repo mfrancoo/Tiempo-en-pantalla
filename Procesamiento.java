@@ -2,7 +2,7 @@ import java.util.*;
 import java.time.*;
 import java.time.temporal.ChronoUnit;
 
-public class Procesamiento {
+public class Procesamiento extends Usuario {
 
     public static LocalDateTime tInicio;
     public static LocalDateTime tFin;
@@ -41,5 +41,15 @@ public class Procesamiento {
 
     public static void calcularPromedioSemanal() {
         // calcular suma de tDiarios por semana
+    }
+
+    public static String enviarAServidor() {
+        // enviar datos del usuario, lista sesiones y lista promediosDiarios
+        return "";
+    }
+
+    public static String enviarAPersistencia() {
+        // enviar datos del usuario, lista sesiones y lista promediosDiarios
+        return "";
     }
 }
