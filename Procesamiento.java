@@ -1,49 +1,45 @@
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.Timer;
-import java.util.TimerTask;
-public class Procesamiento extends TimerTask {
-    private double tDiario;
-    private double tSemanal;
+import java.util.*;
+import java.time.*;
+import java.time.temporal.ChronoUnit;
 
-    @Override
-    public void run() {
-        System.out.println("Temporizador inicio el :"+new Date());
-        completeTask();
-        System.out.println("Temporizador terminó el:"+new Date());
+public class Procesamiento extends Usuario {
+
+    private static LocalDateTime tInicio;
+    private static LocalDateTime tFin;
+    private static long tDiario;
+    private static long tSemanal;
+    public static ArrayList<LocalDateTime> sesiones = new ArrayList<>();
+    public static ArrayList<Long> promediosDiarios = new ArrayList<>(); //minutos
+
+    public static void iniciarTiempo() { // hora y fecha de inicio
+        tInicio = LocalDateTime.now();
+        sesiones.add(tInicio);
+        System.out.println(tInicio.getHour() + ":" + tInicio.getMinute());
+        System.out.println("\nComienza la cuenta de tu tiempo en pantalla.\nTe recordaremos cuando sea hora de una pausa.");
     }
 
-    private void completeTask() { 
-        try {
-            //dura 30 min
-            Thread.sleep(60000*30);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
-    
-    public static void correrTimer() {
-        TimerTask timerTask = new Procesamiento();
-        //running timer task as daemon thread
-        Timer timer = new Timer(true);
-        timer.scheduleAtFixedRate(timerTask, 0, 10*1000);
-        System.out.println("TimerTask started");
-        //cancel after sometime
-        try {
-            Thread.sleep(120000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        timer.cancel();
-        System.out.println("TimerTask cancelled");
-        try {
-            Thread.sleep(30000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+    public static void finalizarTiempo() { // hora y fecha de fin
+        tFin = LocalDateTime.now();
+        System.out.println(tFin.getHour() + ":" + tFin.getMinute());
     }
 
-    public void calcularPromedio(ArrayList<Integer> L){
-    
+    public static void calcularPromedioDiario() {
+        long tMinutos = tInicio.until(tFin, ChronoUnit.MINUTES);
+        double tHoras = tMinutos / 60;
+        tDiario = tMinutos;
+        promediosDiarios.add(tDiario); 
+        System.out.println("\n Su sesión duró " + tHoras + " horas (" + tMinutos + " minutos)");
+
+        /*// Verificamos si es o no la primera sesión del día
+        if (tInicio.getDayOfMonth() == sesiones.get(sesiones.size()-2).getDayOfMonth() && sesiones.get(sesiones.size()-2)!=null) { 
+            tDiario += tMinutos; 
+        } else {
+            tDiario = tMinutos; 
+            promediosDiarios.add(tDiario); 
+        } */
+    }
+
+    public static void calcularPromedioSemanal() {
+        // calcular suma de tDiarios por semana
     }
 }
