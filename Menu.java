@@ -38,7 +38,7 @@ public class Menu extends Procesamiento {
       for (int i = 8; i > 0; i--) {
         System.out.println("  " + i + "  ");
         for (int j = 8; j > 0; j--) {
-          if (Procesamiento.promediosDiarios.get(promediosDiarios.size() - 1) >= i) {
+          if (Procesamiento.promediosDiarios.get(promediosDiarios.size()-1) >= i) {
             System.out.print("|////|");
           } else {
             System.out.print("|    |");
