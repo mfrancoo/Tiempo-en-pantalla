@@ -19,6 +19,7 @@ public class Menu extends Procesamiento{
             Procesamiento.finalizarTiempo();
             Procesamiento.calcularPromedioDiario();
             usuario.mostrarMetaUso();
+            generarBarras("diario");
         }
 
         scan.close();
