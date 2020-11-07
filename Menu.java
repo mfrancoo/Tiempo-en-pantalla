@@ -38,11 +38,10 @@ public class Menu extends Procesamiento {
     if (tipo.equals("diario")) {
       System.out.println("\nUso diario");
       for (int i = 8; i > 0; i--) {
-        //System.out.println("  " + i + "  ");
         if (Procesamiento.promediosDiarios.get(promediosDiarios.size()-1) >= i) {
-          System.out.print("  " + i + "  |////|");
+          System.out.println("  " + i + "  |////|");
         } else {
-          System.out.print("  " + i + "  |    |");
+          System.out.println("  " + i + "  |    |");
         }
       }
       System.out.println("  h   Uso\n");
