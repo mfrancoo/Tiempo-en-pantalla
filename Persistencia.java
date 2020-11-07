@@ -3,7 +3,7 @@ import java.io.IOException;
 import java.io.FileWriter;
 
 public class Persistencia {
-
+    
     public static void crearFichero() {
         try {
             File archivo = new File("RegistrosUsoDiario.txt");
