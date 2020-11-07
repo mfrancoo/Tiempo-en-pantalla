@@ -26,4 +26,9 @@ public class Usuario {
     public void mostrarMetaUso() {
         System.out.println("La meta que te propusiste es "+this.metaUso+" horas");
     }
+
+    @Override
+    public String toString() {
+        return "- "+this.nombre+" -\n"+this.ocupacion+"\nMeta de uso diario: "+this.metaUso;
+    }
 }
