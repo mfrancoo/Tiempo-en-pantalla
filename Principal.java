@@ -11,16 +11,16 @@ public class Principal {
         Persistencia.escribirAFichero();
         */
 
-        while (true) { // mini menú de prueba
+        /*while (true) {  // mini menú de prueba
             int comando = scan.nextInt();
             if (comando == 1) {
                 Procesamiento.iniciarTiempo();
             } else if (comando == 2) {
-                Procesamiento.finalizarTiempo();
-                Procesamiento.calcularPromedioDiario();
+                finalizarTiempo();
+                calcularPromedioDiario();
                 break;
             }
-        }
+        }*/
 
         scan.close();
     }
