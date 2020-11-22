@@ -1,5 +1,6 @@
 import java.io.File;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.io.FileWriter;
 
 public class Persistencia {
@@ -19,14 +20,19 @@ public class Persistencia {
     }
 
     public static void escribirAFichero(String datos) {
+
+        File file = new File("Tiempo-en-pantalla/RegistroHoras.txt");
+        PrintWriter output = null;
         try {
-            FileWriter myWriter = new FileWriter("RegistrosUsoDiario.txt");
-            myWriter.write(datos);
-            myWriter.close();
-            System.out.println("Su registro sa ha almacenado.");
-        } catch (IOException e) {
-            System.out.println("Ha ocurrido un error.");
-            e.printStackTrace();
+            output = new PrintWriter(new FileWriter(file, true));
+            output.println(Procesamiento.tDiario); // horas
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        } finally {
+            if (output != null) {
+                output.close();
+
+            }
         }
     }
 }
