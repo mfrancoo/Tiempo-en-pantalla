@@ -17,6 +17,8 @@ public class Procesamiento extends Usuario {
         sesiones.add(tInicio);
         System.out.println("\nSon las "+tInicio.getHour() + ":" + tInicio.getMinute());
         System.out.println("Comienza la cuenta de tu tiempo en pantalla.\nTe recordaremos cuando sea hora de una pausa.");
+        
+
     }
 
     public static void finalizarTiempo() { // hora y fecha de fin
@@ -30,14 +32,6 @@ public class Procesamiento extends Usuario {
         tDiario = tMinutos;
         promediosDiarios.add(tDiario); 
         System.out.println("\n Su sesión duró " + tHoras + " horas (" + tMinutos + " minutos)");
-
-        /*// Verificamos si es o no la primera sesión del día
-        if (tInicio.getDayOfMonth() == sesiones.get(sesiones.size()-2).getDayOfMonth() && sesiones.get(sesiones.size()-2)!=null) { 
-            tDiario += tMinutos; 
-        } else {
-            tDiario = tMinutos; 
-            promediosDiarios.add(tDiario); 
-        } */
     }
 
     public static void calcularPromedioSemanal() {
