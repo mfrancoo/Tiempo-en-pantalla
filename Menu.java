@@ -1,7 +1,8 @@
 import java.util.Scanner;
+
 public class Menu extends Procesamiento {
 
-  public static  void mostrarMenu() {
+  public static void mostrarMenu() {
 
     Scanner scan = new Scanner(System.in);
     System.out.println("Bienvenido, por favor ingrese los datos solicitados");
@@ -13,21 +14,19 @@ public class Menu extends Procesamiento {
     int metaUso = scan.nextInt();
     Usuario usuario = new Usuario(nombre, ocupacion, metaUso);
 
-    Procesamiento.iniciarTiempo();
-    System.out.println("--- Presione x para detener el temporizador y ver sus graficas de uso ---");
+    while (true) {
+      Procesamiento.iniciarTiempo();
+      System.out.println("--- Presione x para detener el temporizador y ver sus graficas de uso ---");
 
-    String finalizar = scan.next();
-    
-      while (true) {
-        Notificacion.mostrarPausa();
-        if (finalizar.toLowerCase().trim() != "x") {
-          Procesamiento.finalizarTiempo();
-          Procesamiento.calcularPromedioDiario();
-          usuario.mostrarMetaUso();
-          generarBarras("diario");
-          Persistencia.crearFichero();
-          Persistencia.escribirAFichero(usuario.enviarAPersistencia());
-          break;
+      String finalizar = scan.next();
+      Notificacion.mostrarPausa();
+      if (finalizar.toLowerCase().trim() != "x") {
+        Procesamiento.finalizarTiempo();
+        Procesamiento.calcularPromedioDiario();
+        usuario.mostrarMetaUso();
+        generarBarras("diario");
+        Persistencia.escribirAFichero(usuario.enviarAPersistencia());
+        break;
       }
     }
 
@@ -38,7 +37,7 @@ public class Menu extends Procesamiento {
     if (tipo.equals("diario")) {
       System.out.println("\nUso diario");
       for (int i = 8; i > 0; i--) {
-        if (Procesamiento.promediosDiarios.get(promediosDiarios.size()-1) >= i) {
+        if (Procesamiento.promediosDiarios.get(promediosDiarios.size() - 1)/60 >= i) {
           System.out.println("  " + i + "  |////|");
         } else {
           System.out.println("  " + i + "  |    |");
