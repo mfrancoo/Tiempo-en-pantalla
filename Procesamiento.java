@@ -17,8 +17,6 @@ public class Procesamiento extends Usuario {
         sesiones.add(tInicio);
         System.out.println("\nSon las "+tInicio.getHour() + ":" + tInicio.getMinute());
         System.out.println("Comienza la cuenta de tu tiempo en pantalla.\nTe recordaremos cuando sea hora de una pausa.");
-        
-
     }
 
     public static void finalizarTiempo() { // hora y fecha de fin
