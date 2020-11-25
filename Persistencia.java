@@ -6,7 +6,7 @@ public class Persistencia {
 
     public static void escribirAFichero(String datos) {
 
-        File file = new File("RegistrosUsoDiario.txt");
+        File file = new File("RegistrosSesionesHoras.txt");
         PrintWriter output = null;
         try {
             output = new PrintWriter(new FileWriter(file, true));

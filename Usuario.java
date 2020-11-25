@@ -13,8 +13,8 @@ public class Usuario {
         this.nombre = nombre;
         this.ocupacion = ocupacion;
         this.metaUso = metaUso;
-        metaUsoCopia = metaUso;
-        nombreCopia = nombre;
+        metaUsoCopia = this.metaUso;
+        nombreCopia = this.nombre;
     }
 
     public String getNombre() {
