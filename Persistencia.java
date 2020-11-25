@@ -10,7 +10,7 @@ public class Persistencia {
         PrintWriter output = null;
         try {
             output = new PrintWriter(new FileWriter(file, true));
-            output.println(Procesamiento.tDiario); // horas
+            output.println(Procesamiento.tDiario); // minutos
         } catch (Exception e) {
             System.out.println(e.getMessage());
         } finally {

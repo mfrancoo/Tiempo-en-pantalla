@@ -9,7 +9,7 @@ public class Menu extends Procesamiento {
     System.out.println("\nBienvenido, por favor ingrese los datos solicitados\n");
     System.out.println("Nombre:");
     String nombre = scan.next();
-    System.out.println("Ocupación:");
+    System.out.println("Ocupacion:");
     String ocupacion = scan.next();
     System.out.println("Meta de uso (horas)");
     int metaUso = scan.nextInt();

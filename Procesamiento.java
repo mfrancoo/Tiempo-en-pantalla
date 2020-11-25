@@ -29,7 +29,7 @@ public class Procesamiento extends Usuario {
         double tHoras = tMinutos / 60;
         tDiario = tMinutos;
         promediosDiarios.add(tDiario); 
-        System.out.println("\n Su sesión duró " + tHoras + " horas (" + tMinutos + " minutos)");
+        System.out.println("\n Su sesion ha durado " + tHoras + " horas (" + tMinutos + " minutos)");
     }
 
     public static void calcularPromedioSemanal() {
