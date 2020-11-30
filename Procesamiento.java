@@ -26,7 +26,10 @@ public class Procesamiento extends Usuario {
 
     public static void calcularPromedioDiario() {
         long tMinutos = tInicio.until(tFin, ChronoUnit.MINUTES);
-        double tHoras = tMinutos / 60;
+        double tHoras = 0;
+        for (int i = 0; i <= (int)tMinutos && ((int)tMinutos-i)>= 30; i+=30) {
+            tHoras+=0.5;
+        }
         tDiario = tMinutos;
         promediosDiarios.add(tDiario); 
         System.out.println("\n Su sesion ha durado " + tHoras + " horas (" + tMinutos + " minutos)");
